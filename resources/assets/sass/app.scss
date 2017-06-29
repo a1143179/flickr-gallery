@@ -1,0 +1,76 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.deleteCategory, .editCategory {
+	cursor: pointer;
+}
+
+body#category-index {
+
+	.catName {
+		background-color: #d0d6e0;
+		margin-top: 15px;
+	}
+	
+	.editCat, .delCat {
+		cursor: pointer;
+
+	}
+
+	.categoryItem {
+		word-wrap:break-word;
+	}
+	
+}
+body#category-create {
+
+	.pb10 {
+		padding-bottom: 10px;
+	}
+	
+	.pt10 {
+		padding-top: 10px;
+	}
+
+}
+
+
+body#index {
+
+	.flickr-image {
+		margin: 2px;
+		cursor: pointer;
+	}
+	
+	#photoDetails {
+		display: none;
+	}
+	
+	#backToList {
+		cursor: pointer;
+	}
+	
+	#backToListDiv {
+		padding-top: 11px;
+	}
+	
+	.mb10 {
+		margin-bottom: 10px;
+	}
+	
+	.mt10 {
+		margin-top: 10px;
+	}
+	
+	.categoryItem, #photoTitle, #photoDesc {
+		word-wrap:break-word;
+	}
+	
+}
