@@ -100,36 +100,4 @@ class CategoryController extends Controller
         $cat->delete();
     }
     
-    public function flickrSearch(Request $req)
-    {
-        $flickr = new Flickr(new \JeroenG\Flickr\Api('72c9418a120160ce4244b4cc3680f0cf', 'php_serial'));
-        $result = $flickr->request('flickr.photos.search', array(
-            'tags' => $req->catName,
-            'nojsoncallback' => '1',
-        ));
-        $photos = array();
-        foreach ($result->photos['photo'] as $photo) {
-            $photos[] = array(
-                'id' => $photo['id'],
-                'url' => 'https://farm' . $photo['farm'] . '.staticflickr.com/'
-                    . $photo['server'] . '/' . $photo['id'] . '_'
-                    . $photo['secret'] . '_s.jpg'
-            );
-        }
-        
-        return $photos;
-        /*return View::make('category.flickr', array(
-            'photos' => $photos,
-        ));*/
-    }
-    
-    public function flickrInfo(Request $req)
-    {
-        $flickr = new Flickr(new \JeroenG\Flickr\Api('72c9418a120160ce4244b4cc3680f0cf', 'php_serial'));
-        $result = $flickr->request('flickr.photos.getInfo', array(
-            'photo_id' => $req->id,
-            'nojsoncallback' => '1',
-        ));
-        var_dump($result);die();
-    }
 }
